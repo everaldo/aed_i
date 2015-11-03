@@ -1,10 +1,8 @@
 
 
 import unittest
-from bubblesort import BubbleSort
-from selectionsort import SelectionSort
-from insertionsort import InsertionSort, InsertionSort2
 from shellsort import ShellSort
+from shellsortciura import ShellSortCiura
 from mergesort import MergeSort
 from smoke_test import SmokeTest
 from random import shuffle, randint
@@ -38,39 +36,14 @@ class TestAlgoritmosOrdenacao(unittest.TestCase):
         shuffle(self.aleatorio4)
 
 
-    def test_bubblesort(self):
-        self.is_ordenado(BubbleSort(self.ordenado, 'BubbleSort Ordenado'))
-        self.is_ordenado(BubbleSort(self.reverso, 'BubbleSort Reverso'))
-        self.is_ordenado(BubbleSort(self.aleatorio1, 'BubbleSort Aleatorio1'))
-        self.is_ordenado(BubbleSort(self.aleatorio2, 'BubbleSort Aleatorio2'))
-        self.is_ordenado(BubbleSort(self.aleatorio3, 'BubbleSort Aleatorio3'))
-        self.is_ordenado(BubbleSort(self.aleatorio4, 'BubbleSort Aleatorio4'))
 
-    def test_selectionsort(self):
-        self.is_ordenado(SelectionSort(self.ordenado, 'SelectionSort Ordenado'))
-        self.is_ordenado(SelectionSort(self.reverso, 'SelectionSort Reverso'))
-        self.is_ordenado(SelectionSort(self.aleatorio1, 'SelectionSort Aleatorio1'))
-        self.is_ordenado(SelectionSort(self.aleatorio2, 'SelectionSort Aleatorio2'))
-        self.is_ordenado(SelectionSort(self.aleatorio3, 'SelectionSort Aleatorio3'))
-        self.is_ordenado(SelectionSort(self.aleatorio4, 'SelectionSort Aleatorio4'))
-
-    def test_insertionsort(self):
-        self.is_ordenado(InsertionSort(self.ordenado, 'InsertionSort Ordenado'))
-        self.is_ordenado(InsertionSort(self.reverso, 'InsertionSort Reverso'))
-        self.is_ordenado(InsertionSort(self.aleatorio1, 'InsertionSort Aleatorio1'))
-        self.is_ordenado(InsertionSort(self.aleatorio2, 'InsertionSort Aleatorio2'))
-        self.is_ordenado(InsertionSort(self.aleatorio3, 'InsertionSort Aleatorio3'))
-        self.is_ordenado(InsertionSort(self.aleatorio4, 'InsertionSort Aleatorio4'))
-
-
-    def test_insertionsort2(self):
-        self.is_ordenado(InsertionSort2(self.ordenado, 'InsertionSort2 Ordenado'))
-        self.is_ordenado(InsertionSort2(self.reverso, 'InsertionSort2 Reverso'))
-        self.is_ordenado(InsertionSort2(self.aleatorio1, 'InsertionSort2 Aleatorio1'))
-        self.is_ordenado(InsertionSort2(self.aleatorio2, 'InsertionSort2 Aleatorio2'))
-        self.is_ordenado(InsertionSort2(self.aleatorio3, 'InsertionSort2 Aleatorio3'))
-        self.is_ordenado(InsertionSort2(self.aleatorio4, 'InsertionSort2 Aleatorio4'))
-
+    def test_shellsort_ciura(self):
+        self.is_ordenado(ShellSortCiura(self.ordenado, 'ShellSortCiura Ordenado'))
+        self.is_ordenado(ShellSortCiura(self.reverso, 'ShellSortCiura Reverso'))
+        self.is_ordenado(ShellSortCiura(self.aleatorio1, 'ShellSortCiura Aleatorio1'))
+        self.is_ordenado(ShellSortCiura(self.aleatorio2, 'ShellSortCiura Aleatorio2'))
+        self.is_ordenado(ShellSortCiura(self.aleatorio3, 'ShellSortCiura Aleatorio3'))
+        self.is_ordenado(ShellSortCiura(self.aleatorio4, 'ShellSortCiura Aleatorio4'))
 
     def test_shellsort(self):
         self.is_ordenado(ShellSort(self.ordenado, 'ShellSort Ordenado'))
