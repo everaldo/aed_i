@@ -1,5 +1,5 @@
 #
-# 09/11/2015 - Everaldo Gomes - everaldo.gomes@pucpr.br
+# 10/11/2015 - Everaldo Gomes - everaldo.gomes@pucpr.br
 #
 # https://en.wikipedia.org/wiki/Quicksort
 # https://pt.wikipedia.org/wiki/Quicksort
@@ -8,10 +8,10 @@
 
 from compara import Compara
 from troca import Troca
-class QuickSort(Compara, Troca):
+class QuickSortLomuto(Compara, Troca):
 
     def __init__(self, v, label):
-        super(QuickSort, self).__init__()
+        super(QuickSortLomuto, self).__init__()
         self.v = v
         self.label = label
 
@@ -21,26 +21,22 @@ class QuickSort(Compara, Troca):
 
 
     def quicksort(self, inicio, fim):
-        if inicio >= fim:
-            return None
+        if inicio < fim:
+            p = self.particao(inicio, fim)
+            self.quicksort(inicio, p - 1)
+            self.quicksort(p + 1, fim)
+
+
+    def particao(self, inicio, fim):
+        pivo = self.v[fim]
         i = inicio
-        j = fim
-        pivo = self.v[inicio + (fim - inicio) // 2]
-        while i < j:
+        for j in range(inicio, fim):
             self.conta_comparacao()
-            while self.v[i] < pivo:
-                self.conta_comparacao()
-                i = i + 1
-            self.conta_comparacao()
-            while self.v[j] >  pivo:
-                self.conta_comparacao()
-                j = j - 1
-            if i <= j:
+            if self.v[j] <= pivo:
                 self.troca(self.v, i, j)
                 i = i + 1
-                j = j - 1
-        self.quicksort(inicio, j)
-        self.quicksort(i, fim)
+        self.troca(self.v, i, fim)
+        return i
 
     def report(self):
         print('Nome: ', self.label)

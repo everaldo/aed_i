@@ -3,6 +3,7 @@
 import unittest
 from quicksort import QuickSort
 from quicksort_pivoinicio import QuickSortPivoInicio
+from quicksortlomuto import QuickSortLomuto
 from smoke_test import SmokeTest
 from random import shuffle, randint
 from array import array
@@ -47,6 +48,15 @@ class TestAlgoritmosOrdenacao(unittest.TestCase):
         self.is_ordenado(QuickSort(self.aleatorio2[:], 'QuickSort Aleatorio2'))
         self.is_ordenado(QuickSort(self.aleatorio3[:], 'QuickSort Aleatorio3'))
         self.is_ordenado(QuickSort(self.aleatorio4[:], 'QuickSort Aleatorio4'))
+
+    def test_quicksortlomuto(self):
+        self.is_ordenado(QuickSortLomuto(self.ordenado[:], 'QuickSortLomuto Ordenado'))
+        self.is_ordenado(QuickSortLomuto(self.reverso[:], 'QuickSortLomuto Reverso'))
+        self.is_ordenado(QuickSortLomuto(self.aleatorio1[:], 'QuickSortLomuto Aleatorio1'))
+        self.is_ordenado(QuickSortLomuto(self.aleatorio2[:], 'QuickSortLomuto Aleatorio2'))
+        self.is_ordenado(QuickSortLomuto(self.aleatorio3[:], 'QuickSortLomuto Aleatorio3'))
+        self.is_ordenado(QuickSortLomuto(self.aleatorio4[:], 'QuickSortLomuto Aleatorio4'))
+
 
 #    def test_quicksortpivoinicio(self):
 #        self.is_ordenado(QuickSortPivoInicio(self.ordenado[:], 'QuickSortPivoInicio Ordenado'))
