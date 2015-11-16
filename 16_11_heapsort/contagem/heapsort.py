@@ -43,6 +43,7 @@ class HeapSort(Compara, Troca):
             self.conta_troca()
             self.v[raiz] = self.v[filho]
             raiz = filho
+        self.conta_troca()
         self.v[raiz] = x
 
     def report(self):
